@@ -14,10 +14,12 @@ function getLocation() {
                     resolve({ latitude, longitude });
                 },
                 (error) => {
+                    // next: if error, default location
                     reject(`Error getting location: ${error.message}`);
                 }
             );
         } else {
+            // next: if not supported, default location
             reject("Geolocation is not supported by this browser.");
         }
     });
@@ -39,8 +41,6 @@ function initWeatherApp() {
     getLocation()
         .then(({ latitude, longitude }) => {
             const apiUrl = getApiUrl(latitude, longitude);
-
-            // console.log(apiUrl);
             return getWeatherData(apiUrl);
         })
         .then(data => {
