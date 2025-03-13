@@ -1,54 +1,53 @@
+// 
+function getApiUrl(latitude, longitude) {
+    return `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,rain_sum,showers_sum&hourly=temperature_2m,weather_code,wind_speed_10m,rain,wind_direction_10m,showers,apparent_temperature&current=temperature_2m,is_day,wind_speed_10m,weather_code,showers,apparent_temperature&timezone=auto`;
+}
 
 function getLocation() {
     return new Promise((resolve, reject) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-
-                    let latitude = position.coords.latitude;
-                    let longitude = position.coords.longitude;
-
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    console.log ({latitude, longitude})
                     resolve({ latitude, longitude });
-                    
-
                 },
                 (error) => {
-                    console.error("Error getting location:", error.message);
-                    reject(error);
+                    reject(`Error getting location: ${error.message}`);
                 }
             );
         } else {
-            console.error("Geolocation is not supported by this browser.");
+            reject("Geolocation is not supported by this browser.");
         }
-    })
+    });
 }
 
-function getWeatherApiUrl() {
-
-    getLocation();
-
-    let apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,rain_sum,showers_sum&hourly=temperature_2m,weather_code,wind_speed_10m,rain,wind_direction_10m,showers,apparent_temperature&current=temperature_2m,is_day,wind_speed_10m,weather_code,showers,apparent_temperature&timezone=auto`
-
-
-    return apiUrl;
-    console.log(apiUrl)
+function getWeatherData(apiUrl) {
+    return fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Weather data fetched successfully");
+            return data;
+        })
+        .catch(error => {
+            throw new Error(`Error fetching weather data: ${error}`);
+        });
 }
 
-getWeatherApiUrl();
+function initWeatherApp() {
+    getLocation()
+        .then(({ latitude, longitude }) => {
+            const apiUrl = getApiUrl(latitude, longitude);
 
-// const fetchWeather = async () => {
-//     try {
+            // console.log(apiUrl);
+            return getWeatherData(apiUrl);
+        })
+        .then(data => {
+            // Process and display the weather data
+            console.log(data);
+        })
+        .catch(error => console.error(error));
+}
 
-//         // const location = await getLocation();
-
-//         const apiUrl = getWeatherApiUrl(location.latitude, location.longitude);
-
-//         const res = await fetch(apiUrl);
-
-//         const data = await res.data();
-//         console.log(data)
-//     } catch (err) {
-//         console.error(err)
-//     }
-// }
-
+initWeatherApp();
