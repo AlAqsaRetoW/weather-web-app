@@ -1,4 +1,3 @@
-// 
 
 function getLocation() {
     return new Promise((resolve, reject) => {
@@ -10,7 +9,7 @@ function getLocation() {
                     let longitude = position.coords.longitude;
 
                     resolve({ latitude, longitude });
-
+                    
 
                 },
                 (error) => {
@@ -24,27 +23,32 @@ function getLocation() {
     })
 }
 
-function getWeatherApiUrl(latitude, longitude) {
-    let apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&$longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,rain_sum,showers_sum&hourly=temperature_2m,weather_code,wind_speed_10m,rain,wind_direction_10m,showers,apparent_temperature&current=temperature_2m,is_day,wind_speed_10m,weather_code,showers,apparent_temperature&timezone=auto`
+function getWeatherApiUrl() {
 
     getLocation();
 
+    let apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,rain_sum,showers_sum&hourly=temperature_2m,weather_code,wind_speed_10m,rain,wind_direction_10m,showers,apparent_temperature&current=temperature_2m,is_day,wind_speed_10m,weather_code,showers,apparent_temperature&timezone=auto`
+
+
     return apiUrl;
+    console.log(apiUrl)
 }
 
-const fetchWeather = async () => {
-    try {
+getWeatherApiUrl();
 
-        const location = await getLocation();
+// const fetchWeather = async () => {
+//     try {
 
-        const apiUrl = getWeatherApiUrl(location.latitude, location.longitude);
+//         // const location = await getLocation();
 
-        const res = await fetch(apiUrl);
+//         const apiUrl = getWeatherApiUrl(location.latitude, location.longitude);
 
-        const data = await res.data();
-        console.log(data)
-    } catch (err) {
-        console.error(err)
-    }
-}
+//         const res = await fetch(apiUrl);
+
+//         const data = await res.data();
+//         console.log(data)
+//     } catch (err) {
+//         console.error(err)
+//     }
+// }
 
