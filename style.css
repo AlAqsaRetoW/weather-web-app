@@ -9,5 +9,11 @@ body {
 }
 
 .input-group svg {
-    color: rgb(88, 92, 94); /* Bootstrap's default placeholder color */
+    color: rgb(88, 92, 94);
+    /* Bootstrap's default placeholder color */
+}
+
+#weather-icon {
+    width: 316px;
+    height: 316px;
 }

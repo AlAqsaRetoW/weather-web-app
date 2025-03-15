@@ -18,7 +18,7 @@
         <main class="container rounded-3">
 
             <div class="row">
-                <div class="col-4 text-center bg-black bg-gradient p-5 rounded-start-3">
+                <div class="col-4 text-center bg-black bg-gradient p-5 rounded-start-3 min-vh-100">
                     <!-- Search Form -->
                     <div class="d-flex align-items-center justify-content-center">
                         <form>
@@ -47,8 +47,11 @@
                     </div>
                     <!-- Current Weather -->
                     <div class="mt-5">
-                        <div id="weather-icon">WEATHER ICON HERE</div>
-                        <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
+                        <div id="weather-icon">
+                            <!-- TEMP -->
+                            <img class="" src="Weather image.png" alt="" srcset="">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center gap-3">
                             <h1 style="font-size: 4rem;" id="temperature">30°<sup>c</sup></h1>
                             <!-- <ul class="list-unstyled text-start">
                                 <li>°C</li>
@@ -63,10 +66,30 @@
 
                     <hr>
 
+                    <div class="mt-5">
+                        <div class="weather-desc-container d-flex gap-3">
+                            <div id="weather-desc-icon">weather-desc-icon</div>
+                            <div class="text-start" id="weather-desc">Light Rain</div>
+                        </div>
+                        <div class="min-temp-container d-flex gap-3">
+                            <div id="min-temp-icon">min-temp-icon</div>
+                            <div class="text-start" id="min-temp">Min Temperature - 28°C</div>
+                        </div>
+                        <div class="min-temp-container d-flex gap-3">
+                            <div id="min-temp-icon">min-temp-icon</div>
+                            <div class="text-start" id="max-temp">Max Temperature - 31°C</div>
+                        </div>
+                    </div>
+
+                    <div class="air-container">
+                        <div class="d-flex mt-5 gap-1">
+                            <div id="humidity-icon">humidity-icon</div>
+                            <div class="text-start" id="humidity">83%</div>
+                        </div>
+                        <div class="text-start">humidity</div>
+                    </div>
+
                 </div>
-
-
-
             </div>
         </main>
 
