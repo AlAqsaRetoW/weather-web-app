@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -28,13 +25,14 @@
                             <div class="input-group bg-white rounded-3">
                                 <span class="input-group-text border-0 bg-transparent">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                </svg>
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg>
                                 </span>
-                                
-                                <input type="text" class="form-control shadow-none" id="input-city" placeholder="Search city...">
+
+                                <input type="text" class="form-control shadow-none border-0 id=" input-city"
+                                    placeholder="Search city...">
                                 <!-- <button type="button" class="btn btn-primary" onclick=""> -->
                                 </button>
                             </div>
@@ -49,17 +47,21 @@
                     </div>
                     <!-- Current Weather -->
                     <div class="mt-5">
-                        <h1 class="fs-1" id="city-display">Jakarta</h1>
-                        <span id="date">Sat, 15 March 2025</span>
-                        <div id="weather-icon"></div>
+                        <div id="weather-icon">WEATHER ICON HERE</div>
                         <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
-                            <h1 style="font-size: 6rem;" id="temperature">24</h1>
-                            <ul class="list-unstyled text-start">
+                            <h1 style="font-size: 4rem;" id="temperature">30°<sup>c</sup></h1>
+                            <!-- <ul class="list-unstyled text-start">
                                 <li>°C</li>
                                 <li id="description">Drizzle</li>
-                            </ul>
+                            </ul> -->
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around mt-3">
+                            <span id="city-display">Jakarta</span>
+                            <span id="date">Sat, 15 March 2025</span>
                         </div>
                     </div>
+
+                    <hr>
 
                 </div>
 
