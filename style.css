@@ -8,12 +8,20 @@ body {
     color: #fff;
 }
 
+#col-no-1 {
+    background-color: rgb(44, 46, 50);
+}
+
 .input-group svg {
     color: rgb(88, 92, 94);
     /* Bootstrap's default placeholder color */
 }
 
-#weather-icon {
-    width: 316px;
-    height: 316px;
+.weather-icon {
+    max-width: 316px;
+    max-height: 316px;
+}
+
+.air-container {
+    background-color: rgb(37, 36, 37);
 }

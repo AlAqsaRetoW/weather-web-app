@@ -18,9 +18,9 @@
         <main class="container rounded-3">
 
             <div class="row">
-                <div class="col-4 text-center bg-black bg-gradient p-5 rounded-start-3 min-vh-100">
+                <div class="col-4 text-center rounded-3 min-vh-90" id="col-no-1">
                     <!-- Search Form -->
-                    <div class="d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center justify-content-center mt-3">
                         <form>
                             <div class="input-group bg-white rounded-3">
                                 <span class="input-group-text border-0 bg-transparent">
@@ -47,9 +47,9 @@
                     </div>
                     <!-- Current Weather -->
                     <div class="mt-5">
-                        <div id="weather-icon">
+                        <div class="d-flex justify-content-center" id="weather-icon">
                             <!-- TEMP -->
-                            <img class="" src="Weather image.png" alt="" srcset="">
+                            <img class="img-fluid weather-icon" src="Weather image.png" alt="" srcset="">
                         </div>
                         <div class="d-flex align-items-center justify-content-center gap-3">
                             <h1 style="font-size: 4rem;" id="temperature">30°<sup>c</sup></h1>
@@ -58,9 +58,9 @@
                                 <li id="description">Drizzle</li>
                             </ul> -->
                         </div>
-                        <div class="d-flex align-items-center justify-content-around mt-3">
-                            <span id="city-display">Jakarta</span>
-                            <span id="date">Sat, 15 March 2025</span>
+                        <div class="d-flex align-items-center justify-content-between mt-3">
+                            <span class="fs-3" id="city-display">Jakarta</span>
+                            <span class="fs-3" id="date">Saturday</span>
                         </div>
                     </div>
 
@@ -81,16 +81,16 @@
                         </div>
                     </div>
 
-                    <div class="air-container d-flex justify-content-between">
+                    <div class="air-container d-flex justify-content-between mt-5 rounded-3">
                         <div class="humidity-container">
-                            <div class="d-flex mt-5 gap-1">
+                            <div class="d-flex gap-1">
                                 <div id="humidity-icon">humidity-icon</div>
                                 <div class="text-start" id="humidity">83%</div>
                             </div>
                             <div class="text-start">humidity</div>
                         </div>
                         <div class="wind-container">
-                            <div class="d-flex mt-5 gap-1">
+                            <div class="d-flex gap-1">
                                 <div id="wind-icon">humidity-icon</div>
                                 <div class="text-start" id="wind-speed">6km/h</div>
                             </div>
