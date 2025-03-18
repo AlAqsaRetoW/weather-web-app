@@ -1,7 +1,7 @@
 // 
 function getApiUrl(latitude, longitude) {
-    return `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,rain_sum,showers_sum&hourly=temperature_2m,weather_code,wind_speed_10m,rain,wind_direction_10m,showers,apparent_temperature&current=temperature_2m,is_day,wind_speed_10m,weather_code,showers,apparent_temperature&timezone=auto`;
     // set parameter on openmeteo later
+    return `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max&current=temperature_2m,precipitation,weather_code,wind_speed_10m,is_day,surface_pressure,showers,rain,wind_direction_10m&timezone=auto`
 }
 
 function getLocation() {
