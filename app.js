@@ -1,8 +1,8 @@
 /* DOM Selector */
 
-const cityInput = document.getElementById('city-input') // input
-const weatherIcon = document.getElementById('weather-icon') //curr weather icon
-const cityDisplay = document.getElementById('city-display')
+const cityInput = document.getElementById('city-input'); // input
+const weatherIcon = document.getElementById('weather-icon'); //curr weather icon
+const cityDisplay = document.getElementById('city-display');
 
 const daily = document.getElementById('daily');
 const date = document.getElementById('date');
@@ -133,6 +133,11 @@ function displayWeatherData(weatherData, airQualityData) {
   windSpeed.innerText = Math.round(weatherData.current.wind_speed_10m) + weatherData.current_units.wind_speed_10m;
   minTemp.innerText = `Min Temperature - ${Math.round(weatherData.daily.temperature_2m_min[0])} ${weatherData.daily_units.temperature_2m_min}`;
   maxTemp.innerText = `Max Temperature - ${Math.round(weatherData.daily.temperature_2m_max[0])} ${weatherData.daily_units.temperature_2m_max}`;
+  weatherDesc.innerText = WMO[weatherData.current.weather_code].day.description;
+  
+  weatherIcon.innerHTML = `<img src="${
+    WMO[weatherData.current.weather_code].day.image
+  }" class="weather-main-icon"/>`;
 
   // Air Pressure
   const pressureValue = Math.round(weatherData.current.surface_pressure);
@@ -168,7 +173,7 @@ function displayWeatherData(weatherData, airQualityData) {
                 <h5 class="fs-5">
                     ${formattedShortDate(weatherData.daily.time[i])}
                 </h5>
-                <img src="assets/images/windy-sunny-1.png" width="70" height="70" style="margin: 0 auto;" />
+                <img src="${WMO[weatherData.daily.weather_code[i]].day.image}" width="70" height="70" style="margin: 0 auto;" />
                 <span class="fs-5">${Math.round(weatherData.daily.temperature_2m_max[i])}${weatherData.daily_units.temperature_2m_max}</span>
             </div>
         </div>

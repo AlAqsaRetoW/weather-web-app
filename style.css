@@ -11,6 +11,7 @@ body {
 #col-no-1 {
     background-color: rgb(44, 46, 50);
 }
+
 #col-no-2 {
     background-color: rgb(44, 46, 50);
 }
@@ -20,10 +21,22 @@ body {
     /* Bootstrap's default placeholder color */
 }
 
-.weather-icon {
+.weather-main-icon {
+    width: 100%;
     max-width: 250px;
-    max-height: 250px;
-}
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* For medium screens and larger */
+  @media (min-width: 768px) {
+    .weather-main-icon {
+      width: 250px;
+      height: 250px;
+    }
+  }
 
 .air-container {
     background-color: rgb(37, 36, 37);
