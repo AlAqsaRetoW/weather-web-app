@@ -18,4 +18,7 @@ This Weather App allows users to check current weather conditions and forecasts 
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap 5
+- Bootstrap 5.3.3
+- Open-Meteo Weather API
+- Open-Meteo Air Quality API
+- Open-Meteo Geocoding API

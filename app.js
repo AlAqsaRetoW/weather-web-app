@@ -90,7 +90,6 @@ async function getWeatherData(apiUrl) {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching weather data: ${error}`);
@@ -124,7 +123,6 @@ async function initWeatherApp() {
 }
 
 function displayWeatherData(weatherData, airQualityData) {
-  console.log(weatherData, airQualityData);
 
   // Weather data
   date.innerText = formattedDate(weatherData.current.time);
