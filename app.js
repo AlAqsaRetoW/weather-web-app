@@ -13,8 +13,9 @@ const weatherDesc = document.getElementById('weather-desc');
 const humidity = document.getElementById('humidity');
 const windSpeed = document.getElementById('wind-speed');
 const uvIndex = document.getElementById('uv-index');
-const uvCategory = document.getElementById('uv-category')
-const airPressure = document.getElementById('air-pressure')
+const uvCategory = document.getElementById('uv-category');
+const airPressure = document.getElementById('air-pressure');
+const apCategory = document.getElementById('ap-category')
 
 const getGeocoding = async () => {
   let name = cityInput.value;
@@ -172,6 +173,26 @@ function getUvCategory(uvIndex) {
     return {
       category: "High",
       color: "text-danger"   // red
+    };
+  }
+}
+
+function getAirPressureCategory(pressure) {
+  
+  if (pressure< 1005.6) {
+    return {
+      category: "Low",
+      color: "text-danger"  // red
+    };
+  } else if (pressure >= 1005.6 && pressure <= 1020.0) {
+    return {
+      category: "Normal", 
+      color: "text-success"  //  green
+    };
+  } else {
+    return {
+      category: "High",
+      color: "text-primary"  // blue
     };
   }
 }
