@@ -46,6 +46,7 @@ const getGeocoding = async () => {
             windSpeed.innerText = data.current.wind_speed_10m + data.current_units.wind_speed_10m;
             minTemp.innerText = `Min Temperature - ${data.daily.temperature_2m_min[0]} ${data.daily_units.temperature_2m_min}`;
             maxTemp.innerText = `Max Temperature - ${data.daily.temperature_2m_max[0]} ${data.daily_units.temperature_2m_max}`;
+            airPressure.innerText = data.current.surface_pressure;
 
             daily.innerHTML = ``
 
@@ -59,7 +60,7 @@ const getGeocoding = async () => {
                                 <h5 class="fs-5">
                                     ${formattedShortDate(data.daily.time[i])}
                                 </h5>
-                                <img src="windy-sunny-1.png" width="70" height="70" style="margin: 0 auto;" />
+                                <img src="/assets/images/windy-sunny-1.png" width="70" height="70" style="margin: 0 auto;" />
                                 <span class="fs-5">${data.daily.temperature_2m_max[i]}${data.daily_units.temperature_2m_max}</span>
                             </div>
                         </div>
@@ -130,7 +131,7 @@ function initWeatherApp() {
         })
         .then(data => {
             // Process and display the weather data
-            // console.log(data);
+            console.log(data);
             date.innerText = formattedDate(data.current.time);
             temperature.innerText = data.current.temperature_2m;
             temperature.innerText += data.current_units.temperature_2m;
@@ -138,6 +139,7 @@ function initWeatherApp() {
             windSpeed.innerText = data.current.wind_speed_10m + data.current_units.wind_speed_10m;
             minTemp.innerText = `Min Temperature - ${data.daily.temperature_2m_min[0]} ${data.daily_units.temperature_2m_min}`;
             maxTemp.innerText = `Max Temperature - ${data.daily.temperature_2m_max[0]} ${data.daily_units.temperature_2m_max}`;
+            airPressure.innerText = data.current.surface_pressure;
 
             daily.innerHTML = ``
 
