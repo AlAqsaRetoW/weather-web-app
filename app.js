@@ -1,7 +1,7 @@
 /* DOM Selector */
 
-const cityInput = document.getElementById('city-input'); // input
-const weatherIcon = document.getElementById('weather-icon'); //curr weather icon
+const cityInput = document.getElementById('city-input');
+const weatherIcon = document.getElementById('weather-icon');
 const cityDisplay = document.getElementById('city-display');
 
 const daily = document.getElementById('daily');
@@ -153,13 +153,11 @@ function displayWeatherData(weatherData, airQualityData) {
   const aqIndex = document.getElementById('aq-index');
   const aqCategory = document.getElementById('aq-category');
 
-
   const aqiValue = airQualityData.current.us_aqi;
   aqIndex.innerText = aqiValue;
 
   const airQualityInfo = getAirQualityCategory(aqiValue);
   aqCategory.innerHTML = `<span class="${airQualityInfo.color}">${airQualityInfo.category}</span>`;
-
 
   daily.innerHTML = '';
   for (let i = 1; i < weatherData.daily.time.length; i++) {
@@ -183,6 +181,7 @@ function displayWeatherData(weatherData, airQualityData) {
 initWeatherApp();
 
 //-------------------- Helper --------------------
+
 const formattedDate = (date) => {
   const options = {
     weekday: 'short',

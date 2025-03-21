@@ -30,7 +30,6 @@ body {
     display: block;
   }
   
-  /* For medium screens and larger */
   @media (min-width: 768px) {
     .weather-main-icon {
       width: 250px;
