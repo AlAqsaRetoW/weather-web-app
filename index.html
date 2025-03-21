@@ -103,7 +103,7 @@
                     <div
                         class="air-container d-flex justify-content-between mt-3 p-3 px-sm-5 mb-4 rounded-3 mx-auto w-75 gap-3">
                         <div class="humidity-container d-flex align-items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height=32" fill="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-water" viewBox="0 0 16 16">
                                 <path
                                     d="M.036 3.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 3.964a.5.5 0 0 1-.278-.65m0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 6.964a.5.5 0 0 1-.278-.65m0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 9.964a.5.5 0 0 1-.278-.65m0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65" />
@@ -122,7 +122,7 @@
                             </svg>
                             <div class="d-flex flex-column align-items-start">
                                 <span class="text-start fs-4" id="wind-speed">6km/h</span>
-                                <span class="text-start fs-6">WindSpeed</span>
+                                <span class="text-start fs-6">Wind&nbsp;Speed</span>
                             </div>
 
                         </div>
@@ -143,6 +143,23 @@
                             <p>Today's overview</p>
                         </div>
                         <div class="row" id="overview-day">
+                            <div class="col-3 col-md-3">
+                                <div
+                                    class="card bg-gradient text-white text-center rounded-3 border-0 position-relative">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                        <h5 class="fs-6 mb-2">
+                                            Air Quality Index
+                                        </h5>
+                                        <span class="fs-1 d-flex" id="aq-index">53</span>
+                                        <span id="aq-category">Good</span>
+                                        <!-- <span class="fs-6 d-flex">Moderate</span> -->
+                                        <div class="position-absolute bottom-0 end-0 p-2">
+                                            <img src="assets/images/barometer.png" class="img-fluid" width="64"
+                                                height="64">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-3 col-md-3">
                                 <div
                                     class="card bg-gradient text-white text-center rounded-3 border-0 position-relative">
@@ -176,6 +193,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
